@@ -2,7 +2,11 @@
 const links = [
     {
         label: "Week 1 notes",
-        url: "week1/index.html"
+        url: "week01/index.html"
+    },
+    {
+        label: "Week 2 notes",
+        url: "week02/index.html"
     }
 ]
 
@@ -13,3 +17,7 @@ function weeks(){
     }
     document.getElementById("url").innerHTML = content;
 }
+
+
+
+

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WDD 330 | Week 2</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <script src="../js/main.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <h1>WDD 330 | Week 02 Notes</h1>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li class="active"><a href="#">Notes</a></li>
+                <li><a href="mailto:mflota@gmail.com">Contact</a></li>
+            </ul>
+        </nav>
+        <h3>Chapter 2 - Programming Basics</h3>
+        <p>
+            A good review of basic concepts of programming: Variables, the difference between const and let;
+             Importance of commented code, a good practice for other people in the team or evenourselves; 
+            Arithmetic and Logic operators, a review of their use and syntax.
+        </p>
+        <p>
+            Click to Test!<br>
+            <button type="button" onclick="superman()">Click Here</button>
+        </p>
+        <hr>
+        <h3>Chapter 3 - Array, Logic and Loops</h3>
+        <p>
+            Arrays, declaration, syntax, case of use, adding data to array, delete from an array; 
+            Loops, if-else, do-while, while switch and for, syntax, use, and review; iteratin Over
+            a collection.
+        </p>
+        <p>
+            Click to Play Quiz!<br>
+            <button type="button" onclick="quiz()">Play Now!</button>
+        </p>
+        <hr>
+        <h3>Chapter 4 - Functions</h3>
+        <p>
+            Functions, syntax, declaration, calling a function, parameters and arguments, return 
+            value from a function, callbacks; Anonymous function, Arrow functions; DRY (Don't Repeat Yourself), every part of a program 
+            should only repeat once.
+        </p>
+        <p>
+            Click to Play Quiz again!<br>
+            <button type="button" onclick="quizAgain()">Quiz again!</button>
+        </p>
+        <script>
+            /* Week 2 Excercises */
+
+            //Chapter 2 - Programming Basics
+            function superman(){
+                const question = "What is Superman's real name?"
+                const answer = prompt(question);    
+                alert(`You answered: ${answer}`);
+            }
+
+            //Chapter 3 - Array, Logics and Loops
+            function quiz(){
+                const quiz = [
+                    ["What is Superman's real name?","Clark Kent"],
+                    ["What is Wonder Woman's real name?","Diana Prince"],
+                    ["What is Batman's real name?","Bruce Wayne"]
+                ];
+                
+                let score = 0;
+
+                for(const [question,answer] of quiz){
+                    const response = prompt(question);
+                    if(response === answer){
+                        alert('Correct!');
+                        score++;
+                    } else {
+                        alert(`Wrong! The correct answer is: ${answer}`);
+                    }
+                }
+
+                alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);
+            }
+
+            //Chapter 4 - Functions
+            const quizArray = [
+                ["What is Superman's real name?","Clark Kent"],
+                ["What is Wonder Woman's real name?","Diana Prince"],
+                ["What is Batman's real name?","Bruce Wayne"]
+            ];
+
+            function start(quizArray){
+                let score = 0;
+
+                //main game loop
+                for (const [question, answer] of quizArray){
+                    const response = ask(question);
+                    check(response, answer)
+                }
+                //end main game loop
+
+                gameOver();
+
+                //function prompt question
+                function ask(question){
+                    return prompt(question);
+                }
+
+                //Compare answers
+                function check(question, answer){
+                    if(question === answer){
+                        alert('Correct!')
+                        score ++;
+                    } else {
+                        alert(`Wrong! The correct answer is: ${answer}`)
+                    }
+                }
+
+                //Function Game Over
+                function gameOver(){
+                    alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);
+                }
+            }
+
+            function quizAgain(){
+                start(quizArray);
+            }
+        </script>
+        <hr>
+        <h3>Team Activity</h3>
+        <div id="main">
+            Enter a number to sum all the numbers up to your input:
+            <input type="text" id="txtNumber1" style="width: 50px;">
+            <br><br>
+            Enter a second number then click on any button with math operators:
+            <input type="text" id="txtNumber2" style="width: 50px;">
+            <br><br>
+            <button type="button" id="btnCompute" onclick="computeTotal()">Calculate Total</button>
+            <button type="button" id="btnAdd" onclick="addNumbers()">+</button>
+            <button type="button" id="btnSubtract" onclick="subtractNumbers()">-</button>
+            <button type="button" id="btnMultiply" onclick="multiplyNumbers()">x</button>
+            <br>
+         </div>
+         <h4>Outcome:</h4>
+         <div id="divOutput"></div><br>  
+        <script>
+            function readInput() {
+               const intUser1 = parseInt(document.getElementById('txtNumber1').value);
+               const intUser2 = parseInt(document.getElementById('txtNumber2').value);
+               
+               return [intUser1, intUser2];
+            }
+   
+            function showOutput(intOutput) {
+               document.getElementById('divOutput').innerHTML = intOutput;
+            }
+   
+            function computeTotal() {        
+               let total =0;
+               for (let i=1; i <= readInput()[0]; i++) {
+                  total += i;
+               }
+               showOutput(total);
+            }
+   
+            function addNumbers() {
+               // version 1
+               // const intUser1 = parseInt(document.getElementById('txtNumber1').value);
+               // const intUser2 = parseInt(document.getElementById('txtNumber2').value);
+   
+               // let total = intUser1 + intUser2;
+               // document.getElementById('divOutput').innerHTML = total;
+   
+               // version 2
+               // let total = readInput()[0] + readInput()[1];
+               // showOutput(total);
+   
+               // version 3
+               showOutput(readInput()[0] + readInput()[1]);
+            }
+   
+            // stretch functions
+            const subtractNumbers = function () { showOutput(readInput()[0] - readInput()[1]); };
+   
+            const multiplyNumbers = () => { showOutput(readInput()[0] * readInput()[1]); };
+   
+         </script>
+
+        <footer>
+            <p>Author: Mario F.<br>
+            <a href="mailto:mflota@gmail.com">mflota@gmail.com</a></p>
+        </footer>
+    </body>
+</html>
