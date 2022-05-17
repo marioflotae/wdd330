@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #tixTac{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                width: 500px;
+                height: 500px;
+                text-align: center;
+                justify-content: center;
+                font-size: xx-large;
+            }
+            #top1{
+                grid-column: 1 span 1;
+                grid-row: 1 span 1;
+            }
+            #top2{
+                grid-column: 2 span 1;
+                grid-row: 1 span 1;
+            }
+            #top3{
+                grid-column: 3 span 1;
+                grid-row: 1 span 1;
+            }
+            #mid1{
+                grid-column: 1 span 1;
+                grid-row: 2 span 1;
+            }
+            #mid2{
+                grid-column: 2 span 1;
+                grid-row: 2 span 1;
+            }
+            #mid3{
+                grid-column: 3 span 1;
+                grid-row: 2 span 1;
+            }
+            #bottom1{
+                grid-column: 1 span 1;
+                grid-row: 3 span 1;
+            }
+            #bottom2{
+                grid-column: 2 span 1;
+                grid-row: 3 span 1;
+            }
+            #bottom3{
+                grid-column: 3 span 1;
+                grid-row: 3 span 1;
+            }
+
+            div > * {
+                background-color: rgba(95, 104, 233, 0.692);
+                border: 1px solid black;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="tixTac">
+            <div id="top1"></div>
+            <div id="top2"></div>
+            <div id="top3"></div>
+            <div id="mid1"></div>
+            <div id="mid2"></div>
+            <div id="mid3"></div>
+            <div id="bottom1"></div>
+            <div id="bottom2"></div>
+            <div id="bottom3"></div>
+        </div>
+        <button type="button" id="reset" onclick="reset()">Reset</button>
+        <script>
+            let currentPlayer = 0;
+            
+            
+            let board = document.querySelector("#tixTac");
+
+            function playerTurn(){
+                currentPlayer = (currentPlayer === 1 ? currentPlayer = 2 : currentPlayer = 1);
+                 if(currentPlayer === 1){
+                     return 'X';
+                 } else {
+                    return 'O';
+                 }
+            }
+            board.addEventListener('click', (a) => a.target.innerHTML = playerTurn(), false);
+
+            function reset(){
+                const divBoard = document.querySelector('#tixTac');
+                for (let i = 0; i < divBoard.children.length; i++) {
+                 divBoard.children[i].innerText = '';
+                }
+            }
+
+
+        </script>
+        
+     
+    </body>
+</html>

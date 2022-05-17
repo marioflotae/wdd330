@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WDD 330 | Week 4</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <script src="../js/main.js"></script>
+
+        <style>
+            #ticTac{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                width: 500px;
+                height: 500px;
+                text-align: center;
+                font-size: 120px;
+            }
+            #top1{
+                grid-column: 1 span 1;
+                grid-row: 1 span 1;
+            }
+            #top2{
+                grid-column: 2 span 1;
+                grid-row: 1 span 1;
+            }
+            #top3{
+                grid-column: 3 span 1;
+                grid-row: 1 span 1;
+            }
+            #mid1{
+                grid-column: 1 span 1;
+                grid-row: 2 span 1;
+            }
+            #mid2{
+                grid-column: 2 span 1;
+                grid-row: 2 span 1;
+            }
+            #mid3{
+                grid-column: 3 span 1;
+                grid-row: 2 span 1;
+            }
+            #bottom1{
+                grid-column: 1 span 1;
+                grid-row: 3 span 1;
+            }
+            #bottom2{
+                grid-column: 2 span 1;
+                grid-row: 3 span 1;
+            }
+            #bottom3{
+                grid-column: 3 span 1;
+                grid-row: 3 span 1;
+            }
+
+            div>* {
+                background-color: lightcyan;
+                padding-top: 10px;
+            }
+
+            .top, .mid {
+                border-bottom: 3px solid darkblue;
+            }
+
+            .top, .mid, .bottom {
+                border-right: 3px solid darkblue;
+            }
+
+            .right {
+                border-right: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <h1>WDD 330 | Week 04 Notes</h1>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li class="active"><a href="#">Notes</a></li>
+                <li><a href="mailto:mflota@gmail.com">Contact</a></li>
+            </ul>
+        </nav>
+        <h3>Chapter 8: Forms</h3>
+        <p>
+            Forms are the primary method used for entering data into a browser. When a form was submitted, 
+            it would be sent to a server where the information would be processed using a 'back end' language.
+            Input fields are the most common types of form control, text input, password input, checkbox, etc.
+            <em>document.forms</em> will return an HTML collection of all the forms on a page.
+            Forms also have a submit event that can be used to intercept a form before it's been submitted.
+            The information entered into a form can be read or updated using the <em>value</em> property of the form controls.
+        </p>
+        <hr>
+        <h3>Chapter 12 - Object-Oriented Programming in JavaScript</h3>
+        <p>
+            Object-oriented programming (OOP for short) is a style of programming that involves 
+            separating the code into objects that have properties and methods. The objects can 
+            also be reused or easily modified, as required. There are three main concepts in OOP: 
+            <em>encapsulation, polymorphism and inheritance</em>. JavaScript contains a number of 
+            built-in constructor functions such as Object, Array, and Function that can be used to 
+            create <em>objects, arrays and functions</em> instead of literals. The static keyword 
+            can be used in class declarations to create a static method. A static method is called 
+            by the class directly rather than by instances of the class. By default, an object's 
+            methods are public in JavaScript. Methods can be chained together and called in sequence 
+            if they return a reference to <em>this</em>. Methods can be borrowed from other objects. 
+        </p>
+       
+        <hr>
+        <h3>Chapter 15 - Modern Javascript Development</h3>
+        <p>
+            A JavaScript library is a piece of code that provides several methods that make it easier 
+            to achieve common tasks. A good example of how libraries can help save time is in DOM manipulation. 
+            Query is the most popular of all the JavaScript libraries used today. Underscore and Lodash are 
+            very similar libraries of functions that provide additional functionality to the language. A big 
+            advantage of utilizing a popular library is that it will be used by lots of people and thoroughly tested. 
+            There are some disadvantages to using libraries, however. You need to include the code for the library
+             as well as your own code. This increases the amount of code that needs to be downloaded by a website, 
+             which in some cases can cause performance issues. A module is a self-contained piece of code that provides 
+             functions and methods that can then be used in other files and by other modules. Model-View-Controller 
+             (MVC) is a design pattern that's been used for a long time in server-side languages. It's a common way 
+             of designing software, and used by server-side frameworks such as Ruby On Rails and Django. 
+        </p>
+       
+        <hr>
+        <h3>Team Activity</h3>
+        <div id="ticTac">
+            <div id="top1" class="top"></div>
+            <div id="top2" class="top"></div>
+            <div id="top3" class="top right"></div>
+            <div id="mid1" class="mid"></div>
+            <div id="mid2" class="mid"></div>
+            <div id="mid3" class="mid right"></div>
+            <div id="bottom1" class="bottom"></div>
+            <div id="bottom2" class="bottom"></div>
+            <div id="bottom3" class="bottom right"></div>
+         </div>
+        <button type="button" id="reset" onclick="reset()">Reset</button>
+        <script>
+            let currentPlayer = 0;
+            let board = document.querySelector("#ticTac");
+
+            function playerTurn(){
+                currentPlayer = (currentPlayer === 1 ? currentPlayer = 2 : currentPlayer = 1);
+                 if(currentPlayer === 1){
+                     return 'X';
+                 } else {
+                    return 'O';
+                 }
+            }
+            board.addEventListener('click', (a) => a.target.innerHTML = playerTurn(), false);
+
+            function reset(){
+                const divBoard = document.querySelector('#ticTac');
+                for (let i = 0; i < divBoard.children.length; i++) {
+                 divBoard.children[i].innerText = '';
+                }
+            }
+        </script>
+
+        <footer>
+            <p>Author: Mario F.<br>
+            <a href="mailto:mflota@gmail.com">mflota@gmail.com</a></p>
+        </footer>
+    </body>
+</html>
