@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WDD 330 | Week 5</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <script src="../js/main.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <h1>WDD 330 | Week 05 Notes</h1>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li class="active"><a href="#">Notes</a></li>
+                <li><a href="mailto:mflota@gmail.com">Contact</a></li>
+            </ul>
+        </nav>
+        <h3>Chapter 10: Testing and Debugging</h3>
+        <h4>Errors, Exceptions, and Warnings</h4>
+        <p>
+            Errors are caused when something goes wrong in a program. They are usually 
+            caused by one of the following: 
+            <ol>
+                <li>System Error.- A problem with the system or with a external device</li>
+                <li>Programmer Error.- Syntax error, typo, faulty logic</li>
+                <li>User Error.- End user has entered wrong data.</li>
+            </ol>
+            An exception is an error that produces a return value that can then be used by 
+            the program to deal with the error.<br><br>
+            is a sequence of functions or method calls that lead to the point where the error occurred. 
+            It's often not just a single function or method call that causes an error. A stack trace 
+            will work backwards from the point at which the error occurred to identify the original 
+            function or method that started the sequence.<br><br>
+            A warning can occur if there's an error in the code that isn't enough to cause the program 
+            to crash. This means the program will continue to run after a warning.<br><br>
+        </p>
+        <hr>
+        <h4>Feature Detection and Debuggin in the Browser</h4>
+        <p>
+            The recommended way to determine browser support for a feature is to use feature detection. 
+            This is done using an if statement to check whether an object or method exists before trying 
+            to actually call the method. <br>
+            Debugging is the process of finding out where bugs occur in the code and then dealing with them. 
+            In many cases, the point at which an error occurs is not always where it originated, so 
+            you'll need to run through the program to see what's happening at different stages of its execution.<br>
+            The <em>console.log()</em> can be used to log the value of variables at different stages of the program, 
+            although it will not actually stop the execution of the program in the same way as alert() does. <br>
+            Most modern browsers also have a debugging tool that allows you to set breakpoints in your code 
+            that will pause it at certain points. You can then see the values of all the variables at those 
+            points and modify them. This can be very useful when trying to track down bugs.
+        </p>
+       
+        <hr>
+        <h4>Error Objects</h4>
+        <p>
+            An error object can be created by the host environment when an exception occurs, or it can be 
+            created in the code using a constructor function. All error objects have a number of properties, 
+            but they're often used inconsistently across browsers.<br>
+            It's possible to throw your own exceptions using the throw statement. This will allow for any 
+            problems in your code to be highlighted and dealt with, rather than lurk quietly in the background. 
+            The throw statement can be applied to any JavaScript expression, causing the execution of the program to stop.
+        </p>
+       
+        <hr>
+
+        <h4>Exception Handling</h4>
+        <p>
+            When an exception occurs, the program terminates with an error message. It is possible to handle 
+            exceptions gracefully by catching the error. Any errors can be hidden from users, but still identified. 
+            We can then deal with the error appropriately ― perhaps even ignore it ― and keep the program running. 
+            Any code placed inside a try block will pass any error objects to a catch block when an exception occurs. 
+            Any code inside a finally block will run if an exception does or does not occur. 
+        </p>
+       
+        <hr>
+        <h3>Click <a href="team05/hiking-start.html" title="View Week 05 Team Activity Assignment">here</a> for Team Activity</h3>
+
+        <footer>
+            <p>Author: Mario F.<br>
+            <a href="mailto:mflota@gmail.com">mflota@gmail.com</a></p>
+        </footer>
+    </body>
+</html>
