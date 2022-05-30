@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Week 06 | ToDo Challenge</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        
+    </head>
+    <body>
+        <header class="header">
+            <h1>Challenge One: Todo App</h1>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Notes</a></li>
+                <li><a href="mailto:mflota@gmail.com">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>My ToDo App</h2>
+            <div id="todoApp">
+                <div class="displayList">
+                    <ul id="list_item"></ul>
+                    <div class="controller">
+                        <div class="number_task"></div>
+                        <div class="filter">
+                            <button class="all" value="all">All</button>
+                            <button class="pending" value="active">Active</button>
+                            <button class="completed" value="completed">completed</button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div id="addTask">
+                    <form action="">
+                        <div class="form_item">
+                            <input id="user_input" type="text" placeholder="Enter your task" required >
+                            <button class="addTask"><img src="images/add.png" title="add task button"></button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </main>
+        <script></script>
+        <footer>
+            <p>Author: Mario F.<br>
+            <a href="mailto:mflota@gmail.com">mflota@gmail.com</a></p>
+        </footer>
+        <script src="js/ToDos.js" type="module"></script>
+    </body>
+</html>

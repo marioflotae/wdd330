@@ -1,0 +1,74 @@
+h2 {
+    text-align: center;
+}
+
+.controller {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+#todoApp {
+    margin: 20px auto;
+    max-width: 400px;
+    position: relative;
+    padding: 2rem;
+    border: black solid 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+#list_item {
+    background-color: #fff;
+}
+
+#list_item li {
+    border-bottom: black solid 1px;
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+
+.task_completed {
+    background-color: rgba(79, 247, 79, 0.56);
+    text-decoration: line-through;
+}
+
+.task_pending {
+    background-color: #fff;
+}
+
+.filter button {
+    width: 90px;
+}
+
+#addTask {
+
+    bottom: 0;
+    width: 100%;
+    /* padding-bottom: 1rem; */
+}
+
+#addTask input {
+    height: 2.5rem;
+    flex-grow: 1;
+}
+
+img {
+    float: right;
+    padding-top: .5rem;
+}
+
+span {
+    width: auto;
+}
+
+.form_item {
+    display: flex;
+}
+
+.form_item button {
+    margin-left: 15px;
+}
