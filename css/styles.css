@@ -1,7 +1,7 @@
 body {
     font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
     font-size: medium;
-    background-color: fff;
+    background-color: #fff;
 }
 
 .header {
@@ -22,6 +22,10 @@ ul {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
+}
+
+.ul-notes {
+    background-color: #fff;
 }
 .menu li {
     display: inline;
