@@ -1,0 +1,21 @@
+/* body{
+    width:75%;
+    margin:auto;
+} */
+
+th {
+    text-align: left;
+}
+
+#nav, #personDetails {
+    margin-top: 20px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.personFieldName {
+    font-weight: bold;
+    color: gray;
+}
