@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WDD 330 | Week 10</title>
+        
+        <link rel="stylesheet" href="form2-style.css" />
+        <link rel="stylesheet" href="../../css/styles.css" />
+        
+    </head>
+    <body>
+        <header class="header">
+            <h1>WDD 330 | API Form Validation</h1>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="mailto:mflota@gmail.com">Contact</a></li>
+            </ul>
+        </nav>
+        <h3>API Form Validation Example</h3>
+        <div class="form2">
+            <form novalidate>
+                <p>
+                <label for="mail">
+                    <span>Please enter an email address:</span>
+                    <input type="email" id="mail" name="mail" required minlength="8">
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                </p>
+                <button>Submit</button>
+            </form>
+        </div>
+          
+        <script src="script.js"></script>
+        <footer>
+            <p>Author: Mario F.<br>
+            <a href="mailto:mflota@gmail.com">mflota@gmail.com</a></p>
+        </footer>
+    </body>
+</html>
