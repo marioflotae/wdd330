@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create your Own Star Wars Team | WDD 330</title>
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="css/sw.css" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header class="header">
+            <h1>WDD 330 | Block 2 Challenge</h1>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li class="active"><a href="#">Notes</a></li>
+                <li><a href="mailto:mflota@gmail.com">Contact</a></li>
+            </ul>
+        </nav>
+        <main id="main-sw">
+            <h1>Create your Star Wars Team</h1>
+            <p>Choose your favorite characters from the Star Wars universe, mix empire with rebels,
+                only droids or no droids at all, whatever you want just go for it. Explore and learn more 
+                of the Star Wars universe, but most important... HAVE FUN!</p>
+            <p>
+                Instructions: Choose a name and size for your team then hit the GO! button; navigate through
+                the pages, click to a character to see more detail info, learn more about their names, homeworld 
+                or the films they have been to. When you're ready just click on the Add To Team button.
+            </p>
+            <hr>
+            <div id="controller">
+                <form id="pick-team">
+                    <fieldset>
+                        <label>Your team name:</label>
+                        <input type="text" id="team" placeholder="Enter Name" required value="Mandos">
+                        <label>How big is your team? (min 3, max 5):</label>
+                        <input type="number" id="ts" placeholder="Enter Number" required value="3">
+                        <button type="button" value="go" id="addTeam">Go!</button>
+                    </fieldset>
+                </form>
+                <div id="current-teams"></div>
+                <div id="your-team"></div>
+            </div>
+            <hr>
+            <div id="lists">
+                <table id="peoplelist">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Height</th>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+                </table>
+
+                <div id="personDetails"></div>
+                <div id="more-details"></div>
+            </div>
+            <div id="nav">
+                <a id="prev" href="#" class=""><button id="prevB" type="button">&lt; Prev</button></a>
+                <a id="next" href="#" class=""><button id="nextB" type="button">Next &gt;</button></a>
+            </div>
+
+        </main>
+        <footer>
+            <p>Author: Mario F.<br>
+                <a href="mailto:mflota@gmail.com">mflota@gmail.com</a>
+            </p>
+        </footer>
+    </div>
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>

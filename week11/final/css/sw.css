@@ -1,0 +1,205 @@
+#wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+}
+
+#main-sw {
+  background: lightblue url("../images/bg.jpg") no-repeat fixed center;
+  background-size: auto;
+  height: auto;
+}
+
+#main-sw h1,
+p {
+  color: lightcyan;
+}
+
+input {
+  border: 2px solid;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin: 0.25rem;
+  min-width: 125px;
+  max-width: 250px;
+  padding: 0.5rem;
+  transition: background-color 0.5s ease-out;
+}
+
+input:optional {
+  border-color: gray;
+}
+
+input:required {
+  border-color: black;
+}
+
+.valid {
+  background: url("https://assets.digitalocean.com/labs/icons/hand-thumbs-up.svg") no-repeat 95% 50% lightgreen;
+  background-size: 25px;
+}
+
+.invalid {
+  background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg") no-repeat 95% 50% lightsalmon;
+  background-size: 25px;
+}
+
+#nav {
+  margin-top: 1em;
+}
+
+#lists {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  padding: 1rem;
+
+}
+
+.personFieldName {
+  font-weight: bold;
+  color: rgb(12, 1, 1);
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+button {
+  background-color: rgb(219, 176, 82);
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  font-size: 14px;
+  margin: 1em;
+  max-width: 150px;
+}
+
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.disabled {
+  background-color: #e7e7e7;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  font-size: 14px;
+  margin: 1em;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#personDetails {
+  flex-basis: 30%;
+}
+
+#lists ul {
+  margin-top: 2em;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 0;
+}
+
+#personDetails li {
+  margin: 5px;
+}
+
+#peoplelist {
+  flex-basis: 25%;
+}
+
+#more-details {
+  flex-basis: 30%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f20f
+}
+
+th {
+  background-color: rgb(219, 176, 82);
+  color: black;
+}
+
+tr {
+  height: 3rem;
+}
+
+.message span {
+  font-size: large;
+  font-style: italic;
+
+}
+
+#controller {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+#controller h4 {
+  margin-top: 2px;
+}
+
+#controller ol {
+  padding: 0%;
+}
+
+#controller li {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3px;
+}
+
+#pick-team {
+  flex-basis: 30%;
+}
+
+#current-teams,
+#your-team {
+  flex-basis: 15%;
+}
+
+@media only screen and (max-width: 600px) {
+  #controller {
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+  }
+
+  #current-teams,
+  #your-team {
+    padding: 1rem;
+    margin: auto;
+  }
+
+  #controller h4 {
+    text-align: center;
+  }
+
+  #lists {
+    flex-flow: column nowrap;
+  }
+}
